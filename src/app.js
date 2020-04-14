@@ -30,6 +30,13 @@ app.get('/about', (req, res) => {
     })
 })
 
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: 'About',
+        name: 'Divyansh',
+        errorMsg: 'Page ont found'
+    })
+})
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000')
