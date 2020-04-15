@@ -29,6 +29,7 @@ app.get('', (req, res) => {
 })
 app.get('/about', (req, res) => {
     res.render('about', {
+        abouttext: 'About the weather app',
         title: 'About',
         name: 'Divyansh'
     })
