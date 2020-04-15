@@ -30,6 +30,22 @@ app.get('/about', (req, res) => {
     })
 })
 
+app.get('/help', (req, res) => {
+    res.render('help', {
+        helpText: 'This is some helpful text.',
+        title: 'Help',
+        name: 'Andrew Mead'
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Andrew Mead',
+        errorMessage: 'Help article not found.'
+    })
+})
+
 app.get('*', (req, res) => {
     res.render('404', {
         title: 'About',
